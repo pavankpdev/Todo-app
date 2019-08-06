@@ -1,0 +1,22 @@
+.hide {
+    visibility: hidden;
+  }
+  h6{
+    font-family: 'open sans';
+    font-weight:bolder;
+    color: #545656;
+  }
+  .new1 {
+    border: 1px solid grey;
+    width: 150%;
+  }
+  li{
+    font-family: 'product sans';
+    font-weight:bold;
+    color: #007bff; 
+  }
+  .kp{
+    font-family: 'open sans';
+    font-weight:bolder;
+    color: #545656;
+  }
