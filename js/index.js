@@ -11,7 +11,7 @@ submit.addEventListener('click', function() {
 /*
 reset.addEventListener('click',function() {
     const RemoveList= document.querySelectorAll(".list");
-    
-       
+    this is just for fun
+
 }
 */

@@ -1,76 +1,62 @@
 <html>
   <head>
-    <title>
-      Javascript
-    </title>
+    <title>ToDo App</title>
+    <!-- fontawesome kit  -->
+    <script src="https://kit.fontawesome.com/fbeb8616b2.js"></script>
+    <!-- fontawesome kit  -->
     <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
       crossorigin="anonymous"
     />
+    <!-- custom css -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <br /><br /><br />
     <div class="container">
-      <div class="card-deck">
-        <div class="card hide col-sm-2">
-          <div class="card-header">
-            Pavan Kumar
-          </div>
-          <div class="card-body"><br /><br /><br /><br /><br /></div>
+      <!-- header section [image, date and reset button] -->
+      <div class="header">
+        <div class="reset">
+          <i class="fas fa-sync-alt"></i>
         </div>
-        <!-- card in action -->
-        <div class="card shadow-lg p-3 mb-5 bg-white rounded">
-          <div
-            class="card-header border-primary kp"
-            style="background:transparent;"
-          >
-            Pavan Kumar
-          </div>
-          <div class="card-body col-sm-8">
-            <h6>TODO</h6>
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Type something"
-              style="width: 150%"
-              id="inp"
-            /><br />
-            <button type="button" class="btn btn-primary" id="sub">
-              Submit
-            </button>
-            &#160;
-            <button type="button" class="btn btn-outline-danger" id="res">
-              Reset
-            </button>
-            <hr class="new1" />
-            <h6>Your List are as follows :</h6>
-            <ul class="list">
-              <li>pavan</li>
-            </ul>
-          </div>
-        </div>
-        <!-- ---------------  -->
-        <div class="card hide col-sm-2">
-          <div class="card-header">
-            Pavan Kumar
-          </div>
-          <div class="card-body"><br /><br /><br /><br /><br /></div>
+        <div class="date">
+          Wednesday 7 Aug
         </div>
       </div>
+
+      <!-- Contents section [Todo list ] -->
+      <div class="contents">
+        <ul class="list">
+            <li class="item">
+                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                <p class="text">Just For Reference</p>
+                <i class="fa fa-trash-o de" job="delete" id="0"></i> 
+                
+            </li>
+            <li class="item">
+                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                <p class="text">Just For Reference</p>
+                <i class="fa fa-trash-o de" job="delete" id="0"></i> 
+                
+            </li>
+            <li class="item">
+                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
+                <p class="text">Just For Reference</p>
+                <i class="fa fa-trash-o de" job="delete" id="0"></i> 
+                
+            </li>
+          <!--
+            items such as todo, completed button and trash will be inserted by javascript
+            
+            
+          -->
+        </ul>
+      </div>
+      <div class="todo">
+        <i class="fas fa-plus-circle"></i>
+        <input type="text" id="todo" placeholder="Add a to-do"/>
+      </div>
     </div>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
-      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/index.js"></script>
   </body>
 </html>
