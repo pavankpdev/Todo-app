@@ -18,9 +18,9 @@
       <!-- header section [image, date and reset button] -->
       <div class="header">
         <div class="reset">
-          <i class="fas fa-sync-alt"></i>
+          <i class="fas fa-sync-alt" id="reset"></i>
         </div>
-        <div class="date">
+        <div class="date" id="date">
           Wednesday 7 Aug
         </div>
       </div>
@@ -28,35 +28,16 @@
       <!-- Contents section [Todo list ] -->
       <div class="contents">
         <ul class="list">
-            <li class="item">
-                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                <p class="text">Just For Reference</p>
-                <i class="fa fa-trash-o de" job="delete" id="0"></i> 
-                
-            </li>
-            <li class="item">
-                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                <p class="text">Just For Reference</p>
-                <i class="fa fa-trash-o de" job="delete" id="0"></i> 
-                
-            </li>
-            <li class="item">
-                <i class="fa fa-circle-thin co" job="complete" id="0"></i>
-                <p class="text">Just For Reference</p>
-                <i class="fa fa-trash-o de" job="delete" id="0"></i> 
-                
-            </li>
           <!--
             items such as todo, completed button and trash will be inserted by javascript
-            
-            
           -->
         </ul>
       </div>
       <div class="todo">
-        <i class="fas fa-plus-circle"></i>
-        <input type="text" id="todo" placeholder="Add a to-do"/>
+        <i class="fas fa-plus-circle btnin" id="sub"></i>
+        <input type="text" id="todo" placeholder="Add a to-do" class="input" />
       </div>
     </div>
+    <script src="js/index.js"></script>
   </body>
 </html>

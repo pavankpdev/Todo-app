@@ -1,30 +1,29 @@
-body{
+body {
   padding: 0;
   margin: 0;
   background-color: #e0e0e0;
 }
 
-.container{
-  padding:10px;
-  width:380px;
-  margin:0 auto;
+.container {
+  padding: 10px;
+  width: 380px;
+  margin: 0 auto;
 }
 
-.header{
+.header {
   width: 380px;
-  height:200px;
-  background-image: url('../asset/bg2.jpg');
+  height: 200px;
+  background-image: url("../asset/bg2.jpg");
   background-size: 100% 200%;
   background-repeat: no-repeat;
-  border-radius: 15px 15px 0 0 ;
+  border-radius: 15px 15px 0 0;
   position: relative;
-  
 }
-.header :-webkit-box-shadow:{
-  box-shadow: -16px 17px 28px -10px rgba(84,86,86,0.69);
-} 
+.header :-webkit-box-shadow {
+  box-shadow: -16px 17px 28px -10px rgba(84, 86, 86, 0.69);
+}
 
-.reset{
+.reset {
   width: 30px;
   height: 30px;
   position: absolute;
@@ -33,133 +32,137 @@ body{
   color: white;
 }
 
-.reset i{
+.reset i {
   font-size: 30px;
-  color: #FFF;
+  color: #fff;
 }
 
-.reset i:hover{
-    cursor: pointer;
-    text-shadow: 1px 3px 5px #000;
-    transform: rotate(45deg);
+.reset i:hover {
+  cursor: pointer;
+  text-shadow: 1px 3px 5px #000;
+  transform: rotate(45deg);
 }
 
-.date{
+.date {
   bottom: 10px;
   left: 10px;
-  color: #FFF;
+  color: #fff;
   position: absolute;
-  font-family: 'pacifico';
+  font-family: "pacifico";
   font-size: 25px;
 }
 
-.contents{
- background-color: #FFF;
+.contents {
+  background-color: #fff;
   width: 380px;
   height: 350px;
-  max-height:350px;
-  background-color: #FFF;    
+  max-height: 350px;
+  background-color: #fff;
   overflow: auto;
 }
-.contents::-webkit-scrollbar { 
-  display: none; 
+.contents::-webkit-scrollbar {
+  display: none;
 }
-.contents ul{
+.contents ul {
   padding: 0;
   margin: 0;
 }
-.item{
+.item {
   width: 380px;
   height: 40px;
   min-height: 40px;
   position: relative;
-  border-bottom: 1px solid rgba(0,0,0,0.1);  
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   list-style: none;
   padding: 0;
   margin: 0;
   color: #333636;
-
 }
 
-.item i.co{
+.item i.co {
   position: absolute;
   font-size: 20px;
   left: 15px;
   top: 10px;
   padding: 5px;
 }
-.item i.co:hover{
+.item i.co:hover {
   cursor: pointer;
   color: #6eb200;
 }
 /*this property below will change the icon when its clicked*/
-.fa-check-circle{
-  color:#6eb200;
+.fa-check-circle {
+  color: #6eb200;
 }
-.item p.text{
+.item p.text {
   position: absolute;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   font-size: 20px;
-  left:50px;
+  left: 50px;
   top: 10px;
-  background-color: #FFF;
-  max-width:285px;
-  font-family: 'product sans';
+  background-color: #fff;
+  max-width: 285px;
+  font-family: "product sans";
 }
 
-.lineThrough{
+.lineThrough {
   text-decoration: line-through;
-  color : #ccc;
+  color: #ccc;
 }
 
-.item i.de{
+.item i.de {
   position: absolute;
   font-size: 20px;
   right: 15px;
   top: 15px;
 }
 
-.item i.de:hover{
+.item i.de:hover {
   cursor: pointer;
-  color: #E53935;
+  color: #e53935;
 }
 
-hr{
+hr {
   width: 75%;
-  color:#333636;
+  color: #333636;
   bottom: 0;
 }
 
 /*---------- todo content----------*/
-.todo{
+.todo {
   position: relative;
   width: 380px;
   height: 40px;
   min-height: 40px;
-  background-color: #FFF;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  background-color: #fff;
+  border-top: 1px solid rgba(194, 185, 185, 0.1);
 }
 
-.todo i{
+.todo i {
   position: absolute;
   font-size: 30px;
-  color: #039BE5;
+  color: #039be5;
   bottom: 5px;
   left: 5px;
 }
-.todo input{
+.todo input {
   position: absolute;
   left: 40px;
   height: 35px;
-  width: 310px;
+  width: 324px;
   background-color: transparent;
   border: none;
   font-size: 20px;
-  padding-left:10px;
+  padding-left: 10px;
 }
-.todo input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.todo input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
   color: #4162f6;
-  font-family: 'product sans';
+  font-family: "product sans";
   font-size: 20px;
+}
+
+.line {
+  text-decoration: line-through;
 }
