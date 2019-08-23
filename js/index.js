@@ -6,6 +6,7 @@ const LINE_THROUGH = "lineThrough";
 //variables
 let LIST = [];
 let id = 0;
+console.log("TCL: id", id);
 
 // update date automatically
 const dateElement = document.getElementById("date");
@@ -46,14 +47,21 @@ function addTodo(todo, id, status, trash) {
   list.insertAdjacentHTML(position, addTodo);
 }
 // this adds the todo to the list
+
 const submitButton = document.getElementById("sub");
 submitButton.addEventListener("click", () => {
-  const todo = document.getElementById("todo");
+  let todo = document.getElementById("todo");
+  let getObjects;
   if (todo.value) {
-    addTodo(todo.value, id, false, false);
+    console.log("TCL: todo.value", todo.value);
     // this stores the array of objects
     LIST.push({ name: todo.value, id: id, status: false, trash: false });
+    localStorage.setItem(id, JSON.stringify(LIST)); // This will store the values in a local storage
+    getObjects = JSON.parse(localStorage.getItem(id));
+    console.log("TCL: getObjects", getObjects[id].name);
     id++;
+    console.log("TCL: id", id);
+
   } else {
     alert("Cannot insert a empty ToDo");
   }
@@ -68,6 +76,7 @@ document.addEventListener("keyup", function(event) {
       addTodo(todo.value, id, false, false);
       // this stores the array of objects
       LIST.push({ name: todo.value, id: id, status: false, trash: false });
+      localStorage.setItem(id, JSON.stringify(LIST)); // This will store the values in a local storage
       id++;
     } else {
       alert("Cannot insert a empty ToDo");
