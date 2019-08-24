@@ -51,17 +51,11 @@ function addTodo(todo, id, status, trash) {
 const submitButton = document.getElementById("sub");
 submitButton.addEventListener("click", () => {
   let todo = document.getElementById("todo");
-  let getObjects;
   if (todo.value) {
-    console.log("TCL: todo.value", todo.value);
+    addTodo(todo.value, id, false, false);
     // this stores the array of objects
     LIST.push({ name: todo.value, id: id, status: false, trash: false });
-    localStorage.setItem(id, JSON.stringify(LIST)); // This will store the values in a local storage
-    getObjects = JSON.parse(localStorage.getItem(id));
-    console.log("TCL: getObjects", getObjects[id].name);
     id++;
-    console.log("TCL: id", id);
-
   } else {
     alert("Cannot insert a empty ToDo");
   }
@@ -76,7 +70,6 @@ document.addEventListener("keyup", function(event) {
       addTodo(todo.value, id, false, false);
       // this stores the array of objects
       LIST.push({ name: todo.value, id: id, status: false, trash: false });
-      localStorage.setItem(id, JSON.stringify(LIST)); // This will store the values in a local storage
       id++;
     } else {
       alert("Cannot insert a empty ToDo");
