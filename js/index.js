@@ -4,9 +4,7 @@ const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
 //variables
-let LIST = [];
-let id = 0;
-console.log("TCL: id", id);
+let LIST, id;
 
 // update date automatically
 const dateElement = document.getElementById("date");
@@ -46,6 +44,20 @@ function addTodo(todo, id, status, trash) {
   const position = "beforeend";
   list.insertAdjacentHTML(position, addTodo);
 }
+
+// check and reload the previous todo else start the session
+let data = localStorage.getItem("ToDo");
+if (data) {
+  LIST = JSON.parse(data);
+  id = LIST.length;
+  for (let i = 0; i < id; i++) {
+    addTodo(LIST[i].name, LIST[i].id, LIST[i].status, LIST[i].trash);
+  }
+} else {
+  LIST = [];
+  id = 0;
+}
+
 // this adds the todo to the list
 
 const submitButton = document.getElementById("sub");
@@ -55,6 +67,7 @@ submitButton.addEventListener("click", () => {
     addTodo(todo.value, id, false, false);
     // this stores the array of objects
     LIST.push({ name: todo.value, id: id, status: false, trash: false });
+    localStorage.setItem("ToDo", JSON.stringify(LIST));
     id++;
   } else {
     alert("Cannot insert a empty ToDo");
@@ -70,6 +83,7 @@ document.addEventListener("keyup", function(event) {
       addTodo(todo.value, id, false, false);
       // this stores the array of objects
       LIST.push({ name: todo.value, id: id, status: false, trash: false });
+      localStorage.setItem("ToDo", JSON.stringify(LIST));
       id++;
     } else {
       alert("Cannot insert a empty ToDo");
@@ -90,6 +104,8 @@ function completeTodo(element) {
 
 function removeTodo(element) {
   element.parentNode.parentNode.removeChild(element.parentNode);
+  localStorage.removeItem(element.id);
+  --id;
 }
 
 list.addEventListener("click", function(event) {
@@ -97,7 +113,28 @@ list.addEventListener("click", function(event) {
   const elementJOB = element.attributes.status.value;
   if (elementJOB == "complete") {
     completeTodo(element);
+    let completeData = JSON.parse(localStorage.getItem("ToDo"));
+    for (let i = 0; i < completeData.length; i++) {
+      if (completeData[i].id == element.id) {
+        if (LIST[i].status == "true") {
+          LIST[i].status = "false";
+        } else if (LIST[i].status == "false") {
+          LIST[i].status = "true";
+        }
+      }
+    }
+    localStorage.setItem("ToDo", JSON.stringify(LIST));
   } else if (elementJOB == "delete") {
     removeTodo(element);
+    let completeData = JSON.parse(localStorage.getItem("ToDo"));
+    for (let i = 0; i < completeData.length; i++) {
+      if (completeData[i].id == element.id) {
+        console.log(LIST[i]);
+        console.log(LIST);
+        delete LIST[i];
+        console.log(LIST[i]);
+        console.log(LIST);
+      }
+    }
   }
 });
