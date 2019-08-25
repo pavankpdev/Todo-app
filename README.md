@@ -10,3 +10,7 @@ That's it your ready to go, no other frameworks are used here. It's pure javascr
 
 If this helps please star the repository or if you think there's an issue please do pull a request, or if you think this can be optimized please fork the repo and make a contribution.
 Thank You.
+
+NOTE
+
+Version 2 is released please check out to second branch named "version 2"
