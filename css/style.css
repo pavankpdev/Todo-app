@@ -13,8 +13,8 @@ body {
 .header {
   width: 380px;
   height: 200px;
-  background-image: url("../asset/bg2.jpg");
-  background-size: 100% 200%;
+  background-image: url("../asset/bg4.png");
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   border-radius: 15px 15px 0 0;
   position: relative;
