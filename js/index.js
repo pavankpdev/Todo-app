@@ -19,11 +19,16 @@ dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 //reset content
 const reset = document.getElementById("reset");
 reset.addEventListener("click", () => {
+  console.log(LIST);
   if (list.innerHTML !== "") {
     list.innerHTML = "";
   } else {
     alert("Your Todo is empty :)");
   }
+  localStorage.clear("ToDo");
+
+  LIST.length = 0;
+  console.log(LIST);
 });
 
 // Add Todo function
@@ -51,7 +56,11 @@ if (data) {
   LIST = JSON.parse(data);
   id = LIST.length;
   for (let i = 0; i < id; i++) {
-    addTodo(LIST[i].name, LIST[i].id, LIST[i].status, LIST[i].trash);
+    if (LIST[i] == null) {
+      continue;
+    } else {
+      addTodo(LIST[i].name, LIST[i].id, LIST[i].status, LIST[i].trash);
+    }
   }
 } else {
   LIST = [];
@@ -111,11 +120,15 @@ function removeTodo(element) {
 list.addEventListener("click", function(event) {
   const element = event.target;
   const elementJOB = element.attributes.status.value;
+  let elementID = element.attributes.id.value;
+  console.log("TCL: elementID", elementID);
   if (elementJOB == "complete") {
     completeTodo(element);
     let completeData = JSON.parse(localStorage.getItem("ToDo"));
     for (let i = 0; i < completeData.length; i++) {
-      if (completeData[i].id == element.id) {
+      if (!completeData[i]) {
+        continue;
+      } else if (completeData[i].id == elementID) {
         if (LIST[i].status == "true") {
           LIST[i].status = "false";
         } else if (LIST[i].status == "false") {
@@ -128,13 +141,15 @@ list.addEventListener("click", function(event) {
     removeTodo(element);
     let completeData = JSON.parse(localStorage.getItem("ToDo"));
     for (let i = 0; i < completeData.length; i++) {
-      if (completeData[i].id == element.id) {
+      if (!completeData[i]) {
+        continue;
+      } else if (completeData[i].id == elementID) {
         console.log(LIST[i]);
-        console.log(LIST);
         delete LIST[i];
-        console.log(LIST[i]);
-        console.log(LIST);
+        localStorage.setItem("ToDo", JSON.stringify(LIST));
       }
     }
   }
 });
+
+console.log(LIST);
