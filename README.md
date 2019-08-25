@@ -13,4 +13,4 @@ Thank You.
 
 NOTE
 
-Version 2 is released please check out to second branch named "version 2"
+Version 2 is released please check out to second branch named "version2.0"
