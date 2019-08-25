@@ -16,6 +16,7 @@ UPDATE
 Version 2 is released 
 
 What's New in version 2
+
 -> Local Storage is enabled, now the ToDo's will not disappear when the page is refreshed, you can get your ToDo whenever you run the app.
 -> Enhanced UI (psst :- I've only changed the image, that's it ^o^ )
 
